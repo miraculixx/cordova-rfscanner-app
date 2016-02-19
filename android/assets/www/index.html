@@ -18,38 +18,43 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <div class="title"><label>Scan Device</label></div>
-            <div class="interval"><label>Set Interval:</label><input id='interval' value='3'>s</div>
-            <div class="server"><label>Server</label><input id="server" value="https://cpdev.dockrzone.com/api/v1/polls/vote/"></div>
-            <div class="blink">
-                <p class="status listening">Scan is stoped.</p>
-                <p class="status received">Scanning Device</p>
-            </div>
-            <div class="event"><input type="button" class="start_btn" value="Start"><input type="button" class="stop_btn" value="Stop"></div>
-
-        </div>
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/scandevice.js"></script>
-    </body>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Bluetooth WiFi Scan</title>
+</head>
+<body>
+<div class="app">
+    <h1>Bluetooth and WiFi Scan</h1>
+    <div>Coords:<input value="2" id="coordNumber"><input type="button" value="Select" id="selectNum"></div>
+    <div>Set Interval:<input value="3" id="interval">s</div>
+    <div id="coordDiv">
+        <h2>Coord1:</h2>
+        <div class="coord"><label value="Coord1:"></label>
+            <input value="Office"><input value="37.621313"><input value="-122.378955"><input value="1000"></div>
+        <h2>Coord2:</h2>
+        <div class="coord"><label value="Coord2:"></label>
+            <input value="House"><input value="37.621313"><input value="-122.378955"><input value="2000"></div>
+    </div>
+    <h2>Server URL:</h2>
+    <div class="server"><input value="https://cpdev.dockrzone.com/api/v1/polls/vote/" id="serverUrl"></div>
+    <div class="event"><input type="button" value="Start" class="start"><input type="button" value="Stop" class="stop"></div>
+</div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/scandevice.js"></script>
+</body>
 </html>
